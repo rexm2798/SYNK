@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SYNK • AI Rush Order Negotiation Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <header class="hero">
+    <div>
+      <p class="kicker">SYNK • Multi-Agent Factory Intelligence</p>
+      <h1>Rush Order Negotiation Engine</h1>
+      <p class="subtitle">Compress cross-functional decision-making from <strong>24 hours</strong> to <strong>30 seconds</strong> with transparent AI agent negotiation.</p>
+    </div>
+    <div class="stats">
+      <div><span id="roundsRan">0</span><small>Rounds</small></div>
+      <div><span id="decisionTime">0s</span><small>Simulated Time</small></div>
+      <div><span id="finalMargin">--</span><small>Final Margin</small></div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card input-card">
+      <h2>1) Rush Order Submission</h2>
+      <form id="orderForm">
+        <label>Product
+          <select id="productId">
+            <option value="P-100">P-100 (Industrial Pump)</option>
+            <option value="P-200">P-200 (Heat Exchanger)</option>
+            <option value="P-300">P-300 (Valve Assembly)</option>
+          </select>
+        </label>
+        <label>Quantity <input id="quantity" type="number" min="100" value="1200" required /></label>
+        <label>Due in (days) <input id="dueDays" type="number" min="1" max="14" value="2" required /></label>
+        <label>Customer Price per Unit ($) <input id="price" type="number" min="50" value="310" required /></label>
+        <label>Margin Floor (%) <input id="marginFloor" type="number" min="5" max="40" value="18" required /></label>
+
+        <div class="buttons">
+          <button type="submit" class="primary">Run Negotiation</button>
+          <button type="button" id="sampleScenario">Load Stress Scenario</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card output-card">
+      <h2>2) Agent Decisions in Parallel</h2>
+      <div id="agentGrid" class="agent-grid"></div>
+    </section>
+
+    <section class="card log-card">
+      <h2>3) Negotiation Timeline</h2>
+      <ul id="timeline"></ul>
+    </section>
+
+    <section class="card dashboard-card">
+      <h2>4) Human Approval Dashboard</h2>
+      <div id="dashboard" class="dashboard empty">Run a simulation to view final recommendation.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for hackathon demos • Shared-memory multi-agent orchestration • Transparent trade-off engine</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
