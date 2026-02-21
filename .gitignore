@@ -30,3 +30,5 @@ node_modules/
 
 # Excel temp files
 ~$*.xlsx
+
+.qodo
