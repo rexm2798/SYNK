@@ -15,7 +15,8 @@
     <div>
       <p class="kicker">SYNK • Multi-Agent Factory Intelligence</p>
       <h1>Rush Order Negotiation Engine</h1>
-      <p class="subtitle">Compress cross-functional decision-making from <strong>24 hours</strong> to <strong>30 seconds</strong> with transparent AI agent negotiation.</p>
+      <p class="subtitle">A shared-memory multi-agent simulator where department agents negotiate trade-offs and the orchestrator exits only on consensus thresholds.</p>
+      <p class="engine-note">Engine: <strong>Agent protocol + shared memory + deterministic policy rules</strong> (LLM-ready architecture).</p>
     </div>
     <div class="stats">
       <div><span id="roundsRan">0</span><small>Rounds</small></div>
@@ -57,8 +58,13 @@
       <ul id="timeline"></ul>
     </section>
 
+    <section class="card memory-card">
+      <h2>4) Shared Context Memory</h2>
+      <pre id="sharedMemory">Run a simulation to inspect shared state updates.</pre>
+    </section>
+
     <section class="card dashboard-card">
-      <h2>4) Human Approval Dashboard</h2>
+      <h2>5) Human Approval Dashboard</h2>
       <div id="dashboard" class="dashboard empty">Run a simulation to view final recommendation.</div>
     </section>
   </main>

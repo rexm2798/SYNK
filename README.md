@@ -15,13 +15,28 @@ python3 -m http.server 4173
 
 - `http://localhost:4173`
 
+## Are we truly multi-agent, or just rule-based math?
+
+Short answer: **both**.
+
+- It **is a multi-agent system architecture**:
+  - Separate departmental agent modules (Production, Procurement, Logistics, Quality, Finance).
+  - Shared context memory object that each agent reads/writes each round.
+  - Orchestrator agent that checks consensus thresholds and decides whether to continue rounds.
+  - Parallel execution pattern for department agents per round (`Promise.all`).
+- It currently uses **deterministic policy logic** inside each agent (not LLM reasoning yet).
+- This is intentional for hackathon reliability: transparent, testable behavior with an LLM-ready control loop.
+
+So this is a **multi-agent protocol simulation with rule-based brains**.
+
 ## How to use
 
 1. Fill in the rush order fields (product, quantity, due days, price, margin floor).
 2. Click **Run Negotiation**.
 3. Review:
    - Agent decisions (Production, Procurement, Logistics, Quality, Finance, Orchestrator)
-   - Negotiation timeline
+   - Negotiation timeline (round-by-round)
+   - Shared context memory snapshot
    - Human approval dashboard with margin/risk/trade-offs
 
 ## Optional stress test scenario
